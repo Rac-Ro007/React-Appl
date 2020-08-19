@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Media } from 'reactstrap';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 import { DISHES } from './../shared/dishes'
-import { DishDetail } from './DishdetailComponent'
+import DishDetail from './DishdetailComponent'
 
 class Menu extends Component {
     constructor(props) {
@@ -18,6 +18,7 @@ class Menu extends Component {
         this.setState({
             selectedDish : dish
         })
+        console.log(dish)
     }
 
     render() {
@@ -38,8 +39,10 @@ class Menu extends Component {
           <div className="container">
             <div className="row">
                 {menu}
-                <DishDetail />
             </div>
+            
+              <DishDetail {...this.state} />
+            
           </div>
         );
     }

@@ -9,8 +9,8 @@ class DishDetail extends Component {
     renderDish(dish){
         if (dish != null) 
             return (
-                <Card>
-                    <CardImg src={dish.image} alt={dish.name} />
+                <Card key={dish.id}>
+                    <CardImg width="100%" src={dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardBody>{dish.description}</CardBody>
